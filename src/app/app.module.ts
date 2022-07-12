@@ -79,13 +79,16 @@ import { StaticTableTypeComponent } from './components/requisition-form/static.t
       validators: [
         { name: "email", validation: EmailValidator },
         { name: "mobileNo", validation: mobileNoValidator },
-        { name: "aadhaar", validation: aadhaarValidator }
+        { name: "aadhaar", validation: aadhaarValidator },
+        { name: "pincode", validation: pincodeValidator },
+
       ],
       validationMessages: [
         { name: 'required', message: 'This field is required' },
         { name: "email", message: EmailValidatorMessage },
         { name: "mobileNo", message: mobileNoValidatorMessage },
-        { name: "aadhaar", message: aadhaarValidatorMessage }
+        { name: "aadhaar", message: aadhaarValidatorMessage },
+        { name: "pincode", message: pincodeValidatorMessage },
       ],
       wrappers: [
         { name: 'form-field-horizontal', component: FormlyHorizontalWrapper },
@@ -119,6 +122,17 @@ export function aadhaarValidator(control: FormControl): ValidationErrors {
 }
 
 export function aadhaarValidatorMessage(err: any, field: FormlyFieldConfig) {
+
+  return `"${field.formControl?.value}" enter only last 4 digits of aadhaar`;
+
+}
+export function pincodeValidator(control: FormControl): ValidationErrors {
+
+  return /^(\+\d{1,3}[- ]?)?\d{6}$/.test(control.value) ? null as any : { 'aadhaar': true };
+
+}
+
+export function pincodeValidatorMessage(err: any, field: FormlyFieldConfig) {
 
   return `"${field.formControl?.value}" enter only last 4 digits of aadhaar`;
 

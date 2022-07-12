@@ -748,6 +748,9 @@ export class RequisitionFormComponent implements OnInit {
                 "placeholder": "pin",
                 "required": true
               },
+              validators: {
+                validation: ['pincode'],
+              },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
@@ -852,6 +855,9 @@ export class RequisitionFormComponent implements OnInit {
                 "type": "number",
                 "placeholder": "pin",
                 "required": true
+              },
+              validators: {
+                validation: ['pincode'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
