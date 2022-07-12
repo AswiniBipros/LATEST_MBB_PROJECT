@@ -388,7 +388,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Date Of Birth",
                 "type": "date",
-                "placeholder": "dd-mm-yyyy"
+                "placeholder": "dd-mm-yyyy",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -405,7 +406,7 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "male", "label": "male" },
                   { "value": "female", "label": "female" }
                 ],
-
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -421,6 +422,7 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "demo", "label": "demo" }
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -437,6 +439,7 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "yes", "label": "yes" },
                   { "value": "no", "label": "no" }
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -452,6 +455,7 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "demo", "label": "demo" }
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -467,6 +471,7 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "demo", "label": "demo" }
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -479,6 +484,7 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Mobile No.",
                 "placeholder": "Mobile No.",
+                "required": true
               },
               validators: {
                 validation: ['mobileNo'],
@@ -495,6 +501,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Father’s/ Mother’s Occupation",
                 "type": "text",
                 "placeholder": "occupation",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -514,6 +521,7 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "250000 - 500000", "label": "250000 to 500000" },
                   { "value": "Greater than 500000", "label": "Greater than 500000" },
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -527,6 +535,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Email Id",
                 "type": "email",
                 "placeholder": "email",
+                "required": true
               },
               validators: {
                 validation: ['email'],
@@ -545,7 +554,8 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "unmarried", "label": "married" },
                   { "value": "unmarried", "label": "married" }
-                ]
+                ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -559,6 +569,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Guardian Mobile No.",
                 "type": "number",
                 "placeholder": "Mobile No.",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -572,6 +583,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Aadhaar No.",
                 "type": "number",
                 "placeholder": "Aadhaar",
+                "required": true
               },
               "validators": {
                 "validation": ['aadhaar']
@@ -592,6 +604,7 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "panNo", "label": "PAN" },
                   { "value": "drivingLicenceNo", "label": "Driving Licence No" },
                 ],
+                "required": true,
                 "change": () => {
                   if (this.model.voterId) {
                     this.model.voterId = "";
@@ -616,6 +629,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Voter Id",
                 "type": "text",
                 "placeholder": "voter id",
+                "required": true
               },
               "hideExpression": "model.otherIdentification!='voterId'",
               "expressionProperties": {
@@ -631,6 +645,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Pancard No.",
                 "type": "text",
                 "placeholder": "Pan No.",
+                "required": true
               },
               "hideExpression": "model.otherIdentification!='panNo'",
               "expressionProperties": {
@@ -645,6 +660,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Driving Licence No.",
                 "type": "text",
                 "placeholder": "Driving Licence No.",
+                "required": true
               },
               "hideExpression": "model.otherIdentification!='drivingLicenceNo'",
               "expressionProperties": {
@@ -666,7 +682,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "rows": 2,
                 "label": "Present Address",
-                "placeholder": "Full Address"
+                "placeholder": "Full Address",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -679,7 +696,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "PO.",
                 "type": "text",
-                "placeholder": "Post office"
+                "placeholder": "Post office",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -695,6 +713,7 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "demo", "label": "demo" }
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -712,7 +731,8 @@ export class RequisitionFormComponent implements OnInit {
                     "value": "puri",
                     "label": "puri",
                   }
-                ]
+                ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -726,6 +746,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Pincode",
                 "type": "number",
                 "placeholder": "pin",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -752,7 +773,8 @@ export class RequisitionFormComponent implements OnInit {
                     field.form?.get('permanentDistrict')?.setValue(district);
                     field.form?.get('permanentPincode')?.setValue(pincode);
                   }
-                })
+                }),
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -765,7 +787,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "rows": 2,
                 "label": "Permanent Address",
-                "placeholder": "Full Address"
+                "placeholder": "Full Address",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -778,7 +801,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "PO.",
                 "type": "text",
-                "placeholder": "Post office"
+                "placeholder": "Post office",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -794,6 +818,7 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "demo", "label": "demo" }
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -811,7 +836,8 @@ export class RequisitionFormComponent implements OnInit {
                     "value": "puri",
                     "label": "puri",
                   }
-                ]
+                ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -825,6 +851,7 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Pincode",
                 "type": "number",
                 "placeholder": "pin",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -860,6 +887,7 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Candidate Graduated / Appearing with:",
                 "placeholder": "--select--",
+                "required": true,
                 "options": [
                   { "value": "demo", "label": "demo" }
                 ],
@@ -878,6 +906,7 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "demo", "label": "demo" }
                 ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -889,7 +918,8 @@ export class RequisitionFormComponent implements OnInit {
               "className": "col-md-8",
               "templateOptions": {
                 "label": " Candidate obtained percentage of Marks/ CGPA in specific Hons subject (as per his/her choice of admission) at graduation level.",
-                "type": "number"
+                "type": "number",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -905,7 +935,8 @@ export class RequisitionFormComponent implements OnInit {
                 "options": [
                   { "value": "Yearly System", "label": "Yearly System" },
                   { "value": "Semester System", "label": "Semester System" },
-                ]
+                ],
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -918,6 +949,7 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Duration of the course in year/semester",
                 "placeholder": "years",
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -936,7 +968,8 @@ export class RequisitionFormComponent implements OnInit {
                     "templateOptions": {
                       "label": "Sem / Year",
                       "options": [{ "value": "demo", "label": "demo" }],
-                      "placeholder": "--select--"
+                      "placeholder": "--select--",
+                      "required": true
                     }
                   },
                   {
@@ -945,7 +978,8 @@ export class RequisitionFormComponent implements OnInit {
                     "className": "col-3",
                     "templateOptions": {
                       "label": "Total marks/ grade point",
-                      "type": "number"
+                      "type": "number",
+                      "required": true
                     }
                   },
                   {
@@ -955,6 +989,7 @@ export class RequisitionFormComponent implements OnInit {
                     "templateOptions": {
                       "label": "Obtained marks/ grade point",
                       "type": "number",
+                      "required": true
                     }
                   }
                 ],
@@ -967,7 +1002,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": " Total Papers(Relevant Elective/Honours Papers)",
                 "type": "number",
-                "attributes": { style: "width:50%" }
+                "attributes": { style: "width:50%" },
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -980,7 +1016,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Total Marks Allotted(Relevant Elective / Honours Papers) ",
                 "type": "number",
-                "attributes": { style: "width:50%" }
+                "attributes": { style: "width:50%" },
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -993,7 +1030,8 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Total Marks Secured(Relevant Elective / Honours Papers) ",
                 "type": "number",
-                "attributes": { style: "width:50%" }
+                "attributes": { style: "width:50%" },
+                "required": true
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -1011,7 +1049,7 @@ export class RequisitionFormComponent implements OnInit {
                     "type": "input",
                     "className": "col-md-2",
                     "templateOptions": {
-
+                      "required": true
                     },
                     "expressionProperties": {
                       "templateOptions.disabled": "true"
@@ -1027,7 +1065,8 @@ export class RequisitionFormComponent implements OnInit {
                           "value": "demo", "label": "demo"
                         }
                       ],
-                      "placeholder": "--select--"
+                      "placeholder": "--select--",
+                      "required": true
                     },
                   },
                   {
@@ -1040,7 +1079,8 @@ export class RequisitionFormComponent implements OnInit {
                           "value": "2022", "label": "2022"
                         }
                       ],
-                      "placeholder": "--select--"
+                      "placeholder": "--select--",
+                      "required": true
                     },
                   },
                   {
@@ -1053,7 +1093,8 @@ export class RequisitionFormComponent implements OnInit {
                           "value": "demo", "label": "demo"
                         }
                       ],
-                      "placeholder": "--select--"
+                      "placeholder": "--select--",
+                      "required": true
                     },
                   },
                   {
@@ -1061,7 +1102,8 @@ export class RequisitionFormComponent implements OnInit {
                     "type": "input",
                     "className": "col-md-3",
                     "templateOptions": {
-                      "type": "number"
+                      "type": "number",
+                      "required": true
                     },
                   },
                   {
@@ -1069,7 +1111,8 @@ export class RequisitionFormComponent implements OnInit {
                     "type": "input",
                     "className": "col-md-3",
                     "templateOptions": {
-                      "type": "number"
+                      "type": "number",
+                      "required": true
                     },
                   },
                   {
@@ -1077,7 +1120,8 @@ export class RequisitionFormComponent implements OnInit {
                     "type": "input",
                     "className": "col-md-3",
                     "templateOptions": {
-                      "type": "number"
+                      "type": "number",
+                      "required": true
                     },
                   },
                   {
@@ -1085,7 +1129,8 @@ export class RequisitionFormComponent implements OnInit {
                     "type": "input",
                     "className": "col-md-3",
                     "templateOptions": {
-                      "type": "number"
+                      "type": "number",
+                      "required": true
                     },
                   },
                 ],
