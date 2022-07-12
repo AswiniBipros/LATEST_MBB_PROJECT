@@ -46,7 +46,7 @@ export class RequisitionFormComponent implements OnInit {
           "key": "admissionYear",
           "type": "input",
           "className": "col-md-4 field-counter-lower-alpha",
-          "defaultValue": this.datepipe.transform(new Date(),"YYYY"),
+          "defaultValue": this.datepipe.transform(new Date(), "YYYY"),
           "templateOptions": {
             "label": "Admission Year",
             "required": true,
@@ -80,9 +80,9 @@ export class RequisitionFormComponent implements OnInit {
           "fieldGroupClassName": "row field-group-counter-decimal",
           templateOptions: { label: 'Personal Information' },
           fieldGroup: [
-            { 
+            {
               className: 'section-label col-md-12',
-              template: '<div><strong>Academic Details:</strong></div>' 
+              template: '<div><strong>Academic Details:</strong></div>'
             },
             {
               className: 'section-label col-md-12',
@@ -162,9 +162,9 @@ export class RequisitionFormComponent implements OnInit {
                 "templateOptions.disabled": "formState.disabled"
               }
             },
-            { 
+            {
               className: 'section-label col-md-12',
-              template: '<div><strong>Candidate Details:</strong></div>' 
+              template: '<div><strong>Candidate Details:</strong></div>'
             },
             {
               className: 'section-label col-md-12',
@@ -235,9 +235,9 @@ export class RequisitionFormComponent implements OnInit {
                 "templateOptions.disabled": "formState.disabled"
               }
             },
-            { 
+            {
               className: 'section-label col-md-12',
-              template: "<div><strong>Candidate's Father's Details:</strong></div>" 
+              template: "<div><strong>Candidate's Father's Details:</strong></div>"
             },
             {
               className: 'section-label col-md-12',
@@ -304,9 +304,9 @@ export class RequisitionFormComponent implements OnInit {
                 "templateOptions.disabled": "formState.disabled"
               }
             },
-            { 
+            {
               className: 'section-label col-md-12',
-              template: "<div><strong>Candidate's Mother's Details:</strong></div>" 
+              template: "<div><strong>Candidate's Mother's Details:</strong></div>"
             },
             {
               className: 'section-label col-md-12',
@@ -373,9 +373,9 @@ export class RequisitionFormComponent implements OnInit {
                 "templateOptions.disabled": "formState.disabled"
               }
             },
-            { 
+            {
               className: 'section-label col-md-12',
-              template: "<div><strong>Personal Details:</strong></div>" 
+              template: "<div><strong>Personal Details:</strong></div>"
             },
             {
               className: 'section-label col-md-12',
@@ -573,8 +573,8 @@ export class RequisitionFormComponent implements OnInit {
                 "type": "number",
                 "placeholder": "Aadhaar",
               },
-              "validators":{
-              "validation":['aadhaar']
+              "validators": {
+                "validation": ['aadhaar']
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -592,10 +592,16 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "panNo", "label": "PAN" },
                   { "value": "drivingLicenceNo", "label": "Driving Licence No" },
                 ],
-                "change":(field)=>{
-                  field.form.get('drivingLicenceNo').setValue("");
-                  field.form.get('voterId').setValue("");
-                  field.form.get('panNo').setValue("");
+                "change": () => {
+                  if (this.model.voterId) {
+                    this.model.voterId = "";
+                  }
+                  if (this.model.panNo) {
+                    this.model.panNo = "";
+                  }
+                  if (this.model.drivingLicenceNo) {
+                    this.model.drivingLicenceNo = "";
+                  }
                 }
               },
               "expressionProperties": {
@@ -616,7 +622,7 @@ export class RequisitionFormComponent implements OnInit {
                 "templateOptions.disabled": "formState.disabled"
               }
             },
-           
+
             {
               "key": "panNo",
               "type": "input",
@@ -1005,7 +1011,7 @@ export class RequisitionFormComponent implements OnInit {
                     "type": "input",
                     "className": "col-md-2",
                     "templateOptions": {
-        
+
                     },
                     "expressionProperties": {
                       "templateOptions.disabled": "true"
@@ -1084,7 +1090,7 @@ export class RequisitionFormComponent implements OnInit {
                   },
                 ],
               },
-            }        
+            }
           ]
         }
       ],
