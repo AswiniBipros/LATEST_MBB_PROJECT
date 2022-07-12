@@ -1,13 +1,15 @@
-.contain{
-    width: 100%;
-    
+.contain {
+  width: 100%;
 }
 body {
   counter-reset: section;
 }
 
 .lbl::before {
-    counter-reset: section;
+  counter-reset: section;
   counter-increment: section;
   content: "Section " counter(section) ": ";
+}
+.mat-horizontal-stepper-header {
+  pointer-events: none !important;
 }

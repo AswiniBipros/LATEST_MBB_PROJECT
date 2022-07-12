@@ -5,11 +5,10 @@ import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
   selector: 'formly-field-stepper',
   template: `
   <mat-horizontal-stepper>
-    <mat-step
+    <mat-step 
       *ngFor="let step of field.fieldGroup; let index = index; let last = last;">
       <ng-template matStepLabel>{{ step.templateOptions.label }}</ng-template>
       <formly-field [field]="step"></formly-field>
-
       <div>
         <button matStepperPrevious *ngIf="index !== 0"
           class="btn btn-primary"
@@ -30,10 +29,12 @@ import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
         </button>
       </div>
     </mat-step>
-  </mat-horizontal-stepper>
+</mat-horizontal-stepper>
 `,
 })
 export class FormlyFieldStepper extends FieldType {
+  isLinear = false;
+
   isValid(field: FormlyFieldConfig) {
     if (field.key) {
       return field.formControl.valid;
@@ -46,4 +47,5 @@ export class FormlyFieldStepper extends FieldType {
   doThis() {
     console.log(this.model);
   }
+
 }
