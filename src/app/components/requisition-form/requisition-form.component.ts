@@ -41,7 +41,7 @@ export class RequisitionFormComponent implements OnInit {
   valueoptionsMany: any;
   fields: FormlyFieldConfig[] = [
     {
-      fieldGroup: [
+      "fieldGroup": [
         {
           "key": "admissionYear",
           "type": "input",
@@ -71,22 +71,22 @@ export class RequisitionFormComponent implements OnInit {
           }
         }
       ],
-      fieldGroupClassName: "row"
+      "fieldGroupClassName": "row"
     },
     {
-      type: 'stepper',
-      fieldGroup: [
+      "type": 'stepper',
+      "fieldGroup": [
         {
           "fieldGroupClassName": "row field-group-counter-decimal",
-          templateOptions: { label: 'Personal Information' },
-          fieldGroup: [
+          "templateOptions": { "label": 'Personal Information' },
+          "fieldGroup": [
             {
-              className: 'section-label col-md-12',
-              template: '<div><strong>Academic Details:</strong></div>'
+              "className": 'section-label col-md-12',
+              "template": '<div><strong>Academic Details:</strong></div>'
             },
             {
-              className: 'section-label col-md-12',
-              template: '<hr />',
+              "className": 'section-label col-md-12',
+              "template": '<hr />',
             },
             {
               "key": "universityName",
@@ -163,12 +163,12 @@ export class RequisitionFormComponent implements OnInit {
               }
             },
             {
-              className: 'section-label col-md-12',
-              template: '<div><strong>Candidate Details:</strong></div>'
+              "className": 'section-label col-md-12',
+              "template": '<div><strong>Candidate Details:</strong></div>'
             },
             {
-              className: 'section-label col-md-12',
-              template: '<hr />',
+              "className": 'section-label col-md-12',
+              "template": '<hr />',
             },
             {
               "key": "candidatePrefix",
@@ -236,12 +236,12 @@ export class RequisitionFormComponent implements OnInit {
               }
             },
             {
-              className: 'section-label col-md-12',
-              template: "<div><strong>Candidate's Father's Details:</strong></div>"
+              "className": 'section-label col-md-12',
+              "template": "<div><strong>Candidate's Father's Details:</strong></div>"
             },
             {
-              className: 'section-label col-md-12',
-              template: '<hr />',
+              "className": 'section-label col-md-12',
+              "template": '<hr />',
             },
             {
               "key": "candidateFatherPrefix",
@@ -305,12 +305,12 @@ export class RequisitionFormComponent implements OnInit {
               }
             },
             {
-              className: 'section-label col-md-12',
-              template: "<div><strong>Candidate's Mother's Details:</strong></div>"
+              "className": 'section-label col-md-12',
+              "template": "<div><strong>Candidate's Mother's Details:</strong></div>"
             },
             {
-              className: 'section-label col-md-12',
-              template: '<hr />',
+              "className": 'section-label col-md-12',
+              "template": '<hr />',
             },
             {
               "key": "candidateMotherPrefix",
@@ -374,12 +374,12 @@ export class RequisitionFormComponent implements OnInit {
               }
             },
             {
-              className: 'section-label col-md-12',
-              template: "<div><strong>Personal Details:</strong></div>"
+              "className": 'section-label col-md-12',
+              "template": "<div><strong>Personal Details:</strong></div>"
             },
             {
-              className: 'section-label col-md-12',
-              template: '<hr />',
+              "className": 'section-label col-md-12',
+              "template": '<hr />',
             },
             {
               "key": "dateOfBirth",
@@ -486,8 +486,8 @@ export class RequisitionFormComponent implements OnInit {
                 "placeholder": "Mobile No.",
                 "required": true
               },
-              validators: {
-                validation: ['mobileNo'],
+              "validators": {
+                "validation": ['mobileNo'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -537,8 +537,8 @@ export class RequisitionFormComponent implements OnInit {
                 "placeholder": "email",
                 "required": true
               },
-              validators: {
-                validation: ['email'],
+              "validators": {
+                "validation": ['email'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -605,7 +605,7 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "drivingLicenceNo", "label": "Driving Licence No" },
                 ],
                 "required": true,
-                "change": () => {
+                "change": (field) => {
                   if (this.model.voterId) {
                     this.model.voterId = "";
                   }
@@ -626,7 +626,7 @@ export class RequisitionFormComponent implements OnInit {
               "type": "input",
               "className": "col-md-3",
               "templateOptions": {
-                "label": "Voter Id",
+                "label": " ",
                 "type": "text",
                 "placeholder": "voter id",
                 "required": true
@@ -642,7 +642,7 @@ export class RequisitionFormComponent implements OnInit {
               "type": "input",
               "className": "col-md-3",
               "templateOptions": {
-                "label": "Pancard No.",
+                "label": " ",
                 "type": "text",
                 "placeholder": "Pan No.",
                 "required": true
@@ -657,7 +657,7 @@ export class RequisitionFormComponent implements OnInit {
               "type": "input",
               "className": "col-md-3",
               "templateOptions": {
-                "label": "Driving Licence No.",
+                "label": " ",
                 "type": "text",
                 "placeholder": "Driving Licence No.",
                 "required": true
@@ -673,7 +673,7 @@ export class RequisitionFormComponent implements OnInit {
         },
         {
           "fieldGroupClassName": "row field-group-counter-decimal",
-          templateOptions: { label: 'Residential information' },
+          "templateOptions": { "label": 'Residential information' },
           "fieldGroup": [
             {
               "key": "presentAddress",
@@ -861,8 +861,8 @@ export class RequisitionFormComponent implements OnInit {
         },
         {
           "fieldGroupClassName": "row field-group-counter-decimal",
-          templateOptions: { label: 'Educational Information' },
-          fieldGroup: [
+          "templateOptions": { "label": 'Educational Information' },
+          "fieldGroup": [
             {
               "key": "qualificationStatus",
               "type": "radio",
@@ -960,7 +960,7 @@ export class RequisitionFormComponent implements OnInit {
               "type": "repeat",
               "className": "col-md-12",
               "fieldArray": {
-                fieldGroup: [
+                "fieldGroup": [
                   {
                     "key": "semester/year",
                     "type": "select",
