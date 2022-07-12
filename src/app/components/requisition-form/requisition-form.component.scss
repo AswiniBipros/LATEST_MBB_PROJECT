@@ -1,0 +1,13 @@
+.contain{
+    width: 100%;
+    
+}
+body {
+  counter-reset: section;
+}
+
+.lbl::before {
+    counter-reset: section;
+  counter-increment: section;
+  content: "Section " counter(section) ": ";
+}
