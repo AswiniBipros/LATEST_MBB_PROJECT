@@ -28,7 +28,10 @@ export class RequisitionFormComponent implements OnInit {
       { "examinationPassed": "MA/M.Sc./ M.Com." },
       { "examinationPassed": "B.L.I.Sc" },
       { "examinationPassed": "Others" }
-    ]
+    ],
+    "voterId": "",
+    "drivingLicenceNo": "",
+    "panNo": ""
 
   };
   options: FormlyFormOptions = {
@@ -41,7 +44,7 @@ export class RequisitionFormComponent implements OnInit {
   valueoptionsMany: any;
   fields: FormlyFieldConfig[] = [
     {
-      "fieldGroup": [
+      fieldGroup: [
         {
           "key": "admissionYear",
           "type": "input",
@@ -215,7 +218,6 @@ export class RequisitionFormComponent implements OnInit {
               "className": "col-md-3 ",
               "templateOptions": {
                 "label": "Middle Name",
-                "required": true,
                 "placeholder": "Middle Name"
               },
               "expressionProperties": {
@@ -284,7 +286,6 @@ export class RequisitionFormComponent implements OnInit {
               "className": "col-md-3 ",
               "templateOptions": {
                 "label": "Middle Name",
-                "required": true,
                 "placeholder": "Middle Name"
               },
               "expressionProperties": {
@@ -353,7 +354,6 @@ export class RequisitionFormComponent implements OnInit {
               "className": "col-md-3 ",
               "templateOptions": {
                 "label": "Middle Name",
-                "required": true,
                 "placeholder": "Middle Name"
               },
               "expressionProperties": {
@@ -629,7 +629,6 @@ export class RequisitionFormComponent implements OnInit {
                 "label": " ",
                 "type": "text",
                 "placeholder": "voter id",
-                "required": true
               },
               "hideExpression": "model.otherIdentification!='voterId'",
               "expressionProperties": {
@@ -645,7 +644,6 @@ export class RequisitionFormComponent implements OnInit {
                 "label": " ",
                 "type": "text",
                 "placeholder": "Pan No.",
-                "required": true
               },
               "hideExpression": "model.otherIdentification!='panNo'",
               "expressionProperties": {
@@ -660,7 +658,6 @@ export class RequisitionFormComponent implements OnInit {
                 "label": " ",
                 "type": "text",
                 "placeholder": "Driving Licence No.",
-                "required": true
               },
               "hideExpression": "model.otherIdentification!='drivingLicenceNo'",
               "expressionProperties": {
@@ -747,9 +744,6 @@ export class RequisitionFormComponent implements OnInit {
                 "type": "number",
                 "placeholder": "pin",
                 "required": true
-              },
-              validators: {
-                validation: ['pincode'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -855,9 +849,6 @@ export class RequisitionFormComponent implements OnInit {
                 "type": "number",
                 "placeholder": "pin",
                 "required": true
-              },
-              validators: {
-                validation: ['pincode'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -1008,7 +999,7 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": " Total Papers(Relevant Elective/Honours Papers)",
                 "type": "number",
-                "attributes": { style: "width:50%" },
+                "attributes": { "style": "width:70%" },
                 "required": true
               },
               "expressionProperties": {
@@ -1022,7 +1013,7 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Total Marks Allotted(Relevant Elective / Honours Papers) ",
                 "type": "number",
-                "attributes": { style: "width:50%" },
+                "attributes": { "style": "width:70%" },
                 "required": true
               },
               "expressionProperties": {
@@ -1036,7 +1027,7 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Total Marks Secured(Relevant Elective / Honours Papers) ",
                 "type": "number",
-                "attributes": { style: "width:50%" },
+                "attributes": { "style": "width:70%" },
                 "required": true
               },
               "expressionProperties": {

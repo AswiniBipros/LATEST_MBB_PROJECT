@@ -19,8 +19,8 @@ import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
 
         <button matStepperNext *ngIf="!last"
           class="btn btn-primary" type="button"
-          [disabled]="!isValid(step)">
-          Next
+          [disabled]="!isValid(step)"(click)="doThis()">
+          Save & Next
         </button>
 
         <button *ngIf="last" class="btn btn-primary"
@@ -42,5 +42,8 @@ export class FormlyFieldStepper extends FieldType {
     return field.fieldGroup
       ? field.fieldGroup.every((f) => this.isValid(f))
       : true;
+  }
+  doThis() {
+    console.log(this.model);
   }
 }
