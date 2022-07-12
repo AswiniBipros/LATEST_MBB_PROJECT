@@ -895,7 +895,9 @@ export class RequisitionFormComponent implements OnInit {
                 "placeholder": "--select--",
                 "required": true,
                 "options": [
-                  { "value": "demo", "label": "demo" }
+                  { "value": "General", "label": "General" },
+                  { "value": "Honours", "label": "Honours" },
+                  { "value": "B.L.I.Sc", "label": "B.L.I.Sc" },
                 ],
               },
               "expressionProperties": {
@@ -903,8 +905,28 @@ export class RequisitionFormComponent implements OnInit {
               }
             },
             {
+              "key": "graduatedOrAppearingElectiveSubject",
+              "type": "select",
+              "className": "col-md-8",
+              "templateOptions": {
+                "label": " Candidate graduated /Appearing with which elective subject (as per his/her choice of admission).",
+                "placeholder": "--select--",
+                "options": [
+                  { "value": "demo", "label": "demo" }
+                ],
+                "required": true,
+                "attributes":{
+                  style:"width:50%"
+                }
+              },
+              "hideExpression": "model.graduatedOrAppearingWith!='General'",
+              "expressionProperties": {
+                "templateOptions.disabled": "formState.disabled"
+              }
+            },
+            {
               "key": "graduatedOrAppearingHonours",
-              "type": "input",
+              "type": "select",
               "className": "col-md-4",
               "templateOptions": {
                 "label": " Candidate graduated / Appearing with Honours in",
@@ -914,22 +936,31 @@ export class RequisitionFormComponent implements OnInit {
                 ],
                 "required": true
               },
+              "hideExpression": "model.graduatedOrAppearingWith!='Honours'",
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
             },
             {
-              "key": "specificHonsCgpa",
+              "key": "percentageOfMarksOrCGPAInSpecificHonours",
               "type": "input",
-              "className": "col-md-8",
+              "className": "col-md-12",
               "templateOptions": {
                 "label": " Candidate obtained percentage of Marks/ CGPA in specific Hons subject (as per his/her choice of admission) at graduation level.",
-                "type": "number",
                 "required": true
               },
+              "hideExpression": 'model.graduatedOrAppearingWith!="Honours" && model.graduatedOrAppearingWith!="B.L.I.Sc"',
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
+            },
+            {
+              className: 'section-label col-md-12',
+              template: "<div><strong>Candidate obtained percentage of Marks/ CGPA in specific Hons subject (as per his/her choice of admission) at graduation level</strong></div>"
+            },
+            {
+              className: 'section-label col-md-12',
+              template: '<hr />',
             },
             {
               "key": "studentAppearedOrPassedSystem",
