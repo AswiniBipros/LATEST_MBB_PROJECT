@@ -44,7 +44,7 @@ export class RequisitionFormComponent implements OnInit {
   valueoptionsMany: any;
   fields: FormlyFieldConfig[] = [
     {
-      fieldGroup: [
+      "fieldGroup": [
         {
           "key": "admissionYear",
           "type": "input",
@@ -906,9 +906,7 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "demo", "label": "demo" }
                 ],
                 "required": true,
-                "attributes":{
-                  style:"width:50%"
-                }
+                "attributes": { "style": "width:50%" }
               },
               "hideExpression": "model.graduatedOrAppearingWith!='General'",
               "expressionProperties": {
@@ -946,12 +944,12 @@ export class RequisitionFormComponent implements OnInit {
               }
             },
             {
-              className: 'section-label col-md-12',
-              template: "<div><strong>Candidate obtained percentage of Marks/ CGPA in specific Hons subject (as per his/her choice of admission) at graduation level</strong></div>"
+              "className": 'section-label col-md-12',
+              "template": "<div><strong>Candidate obtained percentage of Marks/ CGPA in specific Hons subject (as per his/her choice of admission) at graduation level</strong></div>"
             },
             {
-              className: 'section-label col-md-12',
-              template: '<hr />',
+              "className": 'section-label col-md-12',
+              "template": '<hr />',
             },
             {
               "key": "studentAppearedOrPassedSystem",
