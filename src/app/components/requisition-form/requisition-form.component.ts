@@ -622,7 +622,7 @@ export class RequisitionFormComponent implements OnInit {
               }
             },
             {
-              "key": "",
+              "key": "voterId",
               "type": "input",
               "className": "col-md-3",
               "templateOptions": {
