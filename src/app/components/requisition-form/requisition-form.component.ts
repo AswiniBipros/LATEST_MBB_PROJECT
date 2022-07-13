@@ -29,10 +29,6 @@ export class RequisitionFormComponent implements OnInit {
       { "examinationPassed": "B.L.I.Sc" },
       { "examinationPassed": "Others" }
     ],
-    "voterId": "",
-    "drivingLicenceNo": "",
-    "panNo": ""
-
   };
   options: FormlyFormOptions = {
     formState: {
@@ -208,6 +204,9 @@ export class RequisitionFormComponent implements OnInit {
                 "required": true,
                 "placeholder": "First Name"
               },
+              "validators": {
+                "validation": ['name'],
+              },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
@@ -219,6 +218,9 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Middle Name",
                 "placeholder": "Middle Name"
+              },
+              "validators": {
+                "validation": ['name'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -232,6 +234,9 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Last Name",
                 "required": true,
                 "placeholder": "Last Name"
+              },
+              "validators": {
+                "validation": ['name'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -276,6 +281,9 @@ export class RequisitionFormComponent implements OnInit {
                 "required": true,
                 "placeholder": "First Name"
               },
+              "validators": {
+                "validation": ['name'],
+              },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
@@ -287,6 +295,9 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Middle Name",
                 "placeholder": "Middle Name"
+              },
+              "validators": {
+                "validation": ['name'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -300,6 +311,9 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Last Name",
                 "required": true,
                 "placeholder": "Last Name"
+              },
+              "validators": {
+                "validation": ['name'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -344,6 +358,9 @@ export class RequisitionFormComponent implements OnInit {
                 "required": true,
                 "placeholder": "First Name"
               },
+              "validators": {
+                "validation": ['name'],
+              },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
@@ -355,6 +372,9 @@ export class RequisitionFormComponent implements OnInit {
               "templateOptions": {
                 "label": "Middle Name",
                 "placeholder": "Middle Name"
+              },
+              "validators": {
+                "validation": ['name'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -368,6 +388,9 @@ export class RequisitionFormComponent implements OnInit {
                 "label": "Last Name",
                 "required": true,
                 "placeholder": "Last Name"
+              },
+              "validators": {
+                "validation": ['name'],
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -605,17 +628,6 @@ export class RequisitionFormComponent implements OnInit {
                   { "value": "drivingLicenceNo", "label": "Driving Licence No" },
                 ],
                 "required": true,
-                "change": (field) => {
-                  if (this.model.voterId) {
-                    this.model.voterId = "";
-                  }
-                  if (this.model.panNo) {
-                    this.model.panNo = "";
-                  }
-                  if (this.model.drivingLicenceNo) {
-                    this.model.drivingLicenceNo = "";
-                  }
-                }
               },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
@@ -629,8 +641,21 @@ export class RequisitionFormComponent implements OnInit {
                 "label": " ",
                 "type": "text",
                 "placeholder": "voter id",
+                "required": true
               },
-              "hideExpression": "model.otherIdentification!='voterId'",
+              "hideExpression": (model) => {
+                if (model.otherIdentification != "voterId") {
+                  if (this.form.get('voterId')) {
+                    (this.options.parentForm as any).submitted = false;
+                    this.form.get('voterId').markAsUntouched();
+                  }
+                  delete model.voterId;
+
+                  return true;
+                }
+
+                return false;
+              },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
@@ -644,8 +669,21 @@ export class RequisitionFormComponent implements OnInit {
                 "label": " ",
                 "type": "text",
                 "placeholder": "Pan No.",
+                "required": true
               },
-              "hideExpression": "model.otherIdentification!='panNo'",
+              "hideExpression": (model) => {
+                if (model.otherIdentification != "panNo") {
+                  if (this.form.get('panNo')) {
+                    (this.options.parentForm as any).submitted = false;
+                    this.form.get('panNo').markAsUntouched();
+                  }
+                  delete model.panNo;
+
+                  return true;
+                }
+
+                return false;
+              },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }
@@ -658,8 +696,21 @@ export class RequisitionFormComponent implements OnInit {
                 "label": " ",
                 "type": "text",
                 "placeholder": "Driving Licence No.",
+                "required": true
               },
-              "hideExpression": "model.otherIdentification!='drivingLicenceNo'",
+              "hideExpression": (model) => {
+                if (model.otherIdentification != "drivingLicenceNo") {
+                  if (this.form.get('drivingLicenceNo')) {
+                    (this.options.parentForm as any).submitted = false;
+                    this.form.get('drivingLicenceNo').markAsUntouched();
+                  }
+                  delete model.panNo;
+
+                  return true;
+                }
+
+                return false;
+              },
               "expressionProperties": {
                 "templateOptions.disabled": "formState.disabled"
               }

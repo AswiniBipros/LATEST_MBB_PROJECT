@@ -10,23 +10,26 @@ import { FieldType, FormlyFieldConfig } from '@ngx-formly/core';
       <ng-template matStepLabel>{{ step.templateOptions.label }}</ng-template>
       <formly-field [field]="step"></formly-field>
       <div>
-        <button matStepperPrevious *ngIf="index !== 0"
-          class="btn btn-primary"
-          type="button">
-          Back
-        </button>
-
         <button matStepperNext *ngIf="!last"
           class="btn btn-primary" type="button"
-          [disabled]="!isValid(step)"(click)="doThis()">
+          [disabled]="!isValid(step)"(click)="doThis()" style="margin-left: 8px;float: right">
           Save & Next
         </button>
 
-        <button *ngIf="last" class="btn btn-primary"
+        <button 
+          *ngIf="last" class="btn btn-primary"
           [disabled]="!form.valid"
-          type="submit">
-          Submit
+          type="submit" style="margin-left: 10px;float: right;">
+          Final Submit
         </button>
+
+        <button matStepperPrevious *ngIf="index !== 0"
+          class="btn btn-primary"
+          type="button" style="float: right;">
+          Back
+        </button>
+
+        
       </div>
     </mat-step>
 </mat-horizontal-stepper>

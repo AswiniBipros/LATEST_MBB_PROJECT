@@ -82,7 +82,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         { name: "mobileNo", validation: mobileNoValidator },
         { name: "aadhaar", validation: aadhaarValidator },
         { name: "pincode", validation: pincodeValidator },
-
+        { name: "name", validation: nameValidator }
       ],
       validationMessages: [
         { name: 'required', message: 'This field is required' },
@@ -90,6 +90,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         { name: "mobileNo", message: mobileNoValidatorMessage },
         { name: "aadhaar", message: aadhaarValidatorMessage },
         { name: "pincode", message: pincodeValidatorMessage },
+        { name: "name", message: nameValidatorMessage }
       ],
       wrappers: [
         { name: 'form-field-horizontal', component: FormlyHorizontalWrapper },
@@ -136,5 +137,16 @@ export function pincodeValidator(control: FormControl): ValidationErrors {
 export function pincodeValidatorMessage(err: any, field: FormlyFieldConfig) {
 
   return `"${field.formControl?.value}" enter only last 4 digits of aadhaar`;
+
+}
+export function nameValidator(control: FormControl): ValidationErrors {
+
+  return /^[a-zA-Z ]{2,30}$/.test(control.value) ? null as any : { 'name': true };
+
+}
+
+export function nameValidatorMessage(err: any, field: FormlyFieldConfig) {
+
+  return `"${field.formControl?.value}" enter only characters `;
 
 }
