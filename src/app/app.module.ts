@@ -27,7 +27,7 @@ import { RepeatTableTypeComponent } from './components/repeat-table.type';
 import { CommonModule } from '@angular/common';
 import { DatePipe } from '@angular/common';
 import { StaticTableTypeComponent } from './components/requisition-form/static.table.type';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +50,7 @@ import { StaticTableTypeComponent } from './components/requisition-form/static.t
     CommonModule,
     AutoCompleteModule,
     MatStepperModule,
+    MatToolbarModule,
     BrowserAnimationsModule,
     TypeaheadModule.forRoot(),
     SignaturePadModule,

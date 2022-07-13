@@ -46,6 +46,7 @@ export class FormlyFieldStepper extends FieldType {
   }
   doThis() {
     console.log(this.model);
+    console.log(this.field.form.value);
   }
 
 }

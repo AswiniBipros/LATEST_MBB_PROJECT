@@ -10,6 +10,3 @@ body {
   counter-increment: section;
   content: "Section " counter(section) ": ";
 }
-.mat-horizontal-stepper-header {
-  pointer-events: none !important;
-}
