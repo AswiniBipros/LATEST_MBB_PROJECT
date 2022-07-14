@@ -1,18 +1,13 @@
-<div class="container border" style="background-color:rgb(223 224 226) ;">
-    <img src="assets/images/mbb-university-result-2019.png" alt="">
-    <h3>APPLICATION FOR ADMISSION</h3>
+<div class="container" style="background-color:#ffccb3 ;">
+    <img src="assets/images/MbbLogo.png" alt="">
+    <h2 style="text-align: center;font-size: x-large;">APPLICATION FOR ADMISSION</h2>
     <form [formGroup]="form" (ngSubmit)="submit()">
         <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
         <!-- <button type="submit" class="btn btn-primary submit-button" [disabled]="!form.valid">Submit</button>
         <button type="reset" class="btn btn-primary" style="margin-left: 11px;">Reset</button> -->
     </form>
 </div>
-
-
-
-
-
-
 <div>
-    {{model|json}}
+    {{model | json}}
 </div>
+<!-- <p>rgb(223 224 226) -->

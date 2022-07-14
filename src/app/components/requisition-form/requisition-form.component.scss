@@ -1,5 +1,5 @@
-.contain {
-  width: 100%;
+.container {
+  max-width: 100%;
 }
 body {
   counter-reset: section;
@@ -9,4 +9,17 @@ body {
   counter-reset: section;
   counter-increment: section;
   content: "Section " counter(section) ": ";
+}
+
+::ng-deep {
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid #ffccb3;
+    border-width: 5px;
+  }
+  .mat-horizontal-stepper-header {
+    pointer-events: none !important;
+  }
 }

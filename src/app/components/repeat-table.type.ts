@@ -16,7 +16,7 @@ import { FieldType, FieldArrayType, FieldTypeConfig } from '@ngx-formly/core';
       <td *ngFor="let fieldObj of fieldGrp.fieldGroup;let j=index;">
         <formly-field class="col" [field]="fieldObj"></formly-field>
       </td>
-      <td><button class="btn btn-danger" type="button" (click)="remove(i)" >Remove</button></td>
+      <td><button class="btn btn-danger" type="button" (click)="remove(i)" *ngIf="i != 0">Remove</button></td>
     </tr>
     <tr>
   </tbody>

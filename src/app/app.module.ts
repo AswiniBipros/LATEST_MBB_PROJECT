@@ -130,13 +130,13 @@ export function aadhaarValidatorMessage(err: any, field: FormlyFieldConfig) {
 }
 export function pincodeValidator(control: FormControl): ValidationErrors {
 
-  return /^(\+\d{1,3}[- ]?)?\d{6}$/.test(control.value) ? null as any : { 'aadhaar': true };
+  return /^(\+\d{1,3}[- ]?)?\d{6}$/.test(control.value) ? null as any : { 'pincode': true };
 
 }
 
 export function pincodeValidatorMessage(err: any, field: FormlyFieldConfig) {
 
-  return `"${field.formControl?.value}" enter only last 4 digits of aadhaar`;
+  return `"${field.formControl?.value}" enter a 6 digit pincode`;
 
 }
 export function nameValidator(control: FormControl): ValidationErrors {
@@ -147,6 +147,6 @@ export function nameValidator(control: FormControl): ValidationErrors {
 
 export function nameValidatorMessage(err: any, field: FormlyFieldConfig) {
 
-  return `"${field.formControl?.value}" enter only characters `;
+  return `"${field.formControl?.value}" min_letters: "2" | max_letters: "30" and only characters `;
 
 }
